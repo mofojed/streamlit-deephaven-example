@@ -3,16 +3,16 @@
 """
 
 import streamlit as st
-import __main__
 from streamlit_deephaven import start_server, display_dh
 
+# Start the Deephaven server. You must start the server before running any Deephaven operations.
 start_server()
 
-st.subheader("Deephaven Component Demo")
+st.subheader("Streamlit Deephaven")
 
-st.subheader(__name__)
-
+# Create a simple table.
 from deephaven import empty_table
 t = empty_table(1000).update(["x=i", "y=x * x"])
-display_dh(t)
 
+# Display the table.
+display_dh(t)
